@@ -1,0 +1,83 @@
+
+1.  Nel modello a cascata, una delle caratteristiche principali è che i requisiti vengono definiti in dettaglio solo all'inizio del progetto, e non sono previste modifiche sostanziali in fasi successive.
+    *   (a) Vero
+    *   (b) Falso
+
+2.  Durante la fase di ideazione in UP, l'obiettivo principale è raccogliere tutti i requisiti del sistema, creare stime precise e piani di progetto affidabili, per poi procedere allo sviluppo.
+    *   (a) Vero
+    *   (b) Falso
+
+3.  I casi d'uso in UP sono principalmente diagrammi che mostrano le interazioni tra gli attori e il sistema, piuttosto che documenti testuali che descrivono scenari d'uso.
+    *   (a) Vero
+    *   (b) Falso
+
+4.  Un attore di supporto in un caso d'uso è colui che interagisce direttamente con il sistema per raggiungere un obiettivo specifico, mentre un attore primario offre un servizio al sistema.
+    *   (a) Vero
+    *   (b) Falso
+
+5.  Le estensioni di un caso d'uso descrivono principalmente variazioni di successo dello scenario principale, mentre gli scenari di fallimento sono trattati separatamente.
+    *   (a) Vero
+    *   (b) Falso
+
+6.  Lo stile essenziale nella scrittura di un caso d'uso implica la descrizione dettagliata delle interazioni dell'utente con l'interfaccia, focalizzandosi sulle azioni concrete e sui dettagli tecnologici.
+    *   (a) Vero
+    *   (b) Falso
+
+7.  Il test del capo, utilizzato per valutare l'utilità di un caso d'uso, si basa sulla verifica se il caso d'uso descrive un'attività di valore dal punto di vista del management.
+    *   (a) Vero
+    *   (b) Falso
+
+8.  Un modello di dominio in UP ha lo scopo principale di definire le classi software che implementeranno il sistema, e non di rappresentare concetti del mondo reale.
+    *   (a) Vero
+    *   (b) Falso
+
+9.  In un modello di dominio, un'associazione è un attributo che specifica una relazione tra due classi, non una connessione concettuale tra di esse.
+    *   (a) Vero
+    *   (b) Falso
+
+10. Un attributo derivato in un modello di dominio è un valore che viene calcolato o derivato dalle informazioni contenute negli oggetti associati, e non memorizzato direttamente.
+    *   (a) Vero
+    *   (b) Falso
+
+11. I diagrammi di sequenza di sistema (SSD) sono strumenti per descrivere nel dettaglio le interazioni tra gli oggetti all'interno del sistema, con particolare attenzione ai dettagli implementativi.
+    *   (a) Vero
+    *   (b) Falso
+
+12. Un contratto in UP descrive come un'operazione di sistema deve essere implementata in termini di codice e tecnologia, con particolare attenzione ai dettagli implementativi.
+    *   (a) Vero
+    *   (b) Falso
+
+13. Le pre-condizioni di un contratto descrivono lo stato del sistema dopo l'esecuzione di un'operazione, mentre le post-condizioni specificano lo stato del sistema prima dell'operazione.
+    *   (a) Vero
+    *   (b) Falso
+
+14.  Nello sviluppo agile, l'obiettivo principale è pianificare tutti i dettagli del progetto all'inizio, con poche modifiche durante lo sviluppo.
+    *  (a) Vero
+    *  (b) Falso
+
+15. Il principio GRASP di Information Expert suggerisce di assegnare le responsabilità a un oggetto che possiede le informazioni necessarie per soddisfarla.
+    *   (a) Vero
+    *   (b) Falso
+
+16. Il pattern Controller assegna la responsabilità di gestire gli eventi di sistema all'interfaccia utente, separando la logica dell'applicazione dalla presentazione.
+    *   (a) Vero
+    *   (b) Falso
+
+17. Il pattern Composite è utilizzato per definire una famiglia di algoritmi intercambiabili, incapsulando ciascuno di essi in una classe separata.
+    *   (a) Vero
+    *   (b) Falso
+
+18. Il pattern Visitor consente di aggiungere nuove operazioni a una gerarchia di oggetti senza modificare le classi degli oggetti stessi.
+    *   (a) Vero
+    *   (b) Falso
+
+19.  Nello sviluppo Test-Driven Development (TDD), i test unitari vengono scritti dopo che il codice è stato implementato, per verificare la correttezza del codice scritto.
+    *   (a) Vero
+    *   (b) Falso
+
+20. Il refactoring è una pratica che consiste nel modificare il codice senza alterarne la funzionalità, con lo scopo di migliorarne la leggibilità e la manutenibilità.
+    *   (a) Vero
+    *   (b) Falso
+
+Risposte:
+1.(a) 2.(b) 3.(b) 4.(b) 5.(b) 6.(b) 7.(a) 8.(b) 9.(b) 10.(a) 11.(b) 12.(b) 13.(b) 14.(b) 15.(a) 16.(b) 17.(b) 18.(a) 19.(b) 20.(a)

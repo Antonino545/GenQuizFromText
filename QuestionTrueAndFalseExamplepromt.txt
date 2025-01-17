@@ -1,0 +1,19 @@
+Genera un quiz a scelta multipla con 20 domande seguendo queste linee guida:
+
+
+Le domande devono essere numerate progressivamente da 1 a 20.
+Ogni domanda deve avere due opzioni di risposta: Vero e Falso, etichettate rispettivamente come (a) e (b).
+Le domande devono essere dettagliate, complesse e accompagnate da un contesto chiaro, per richiedere una riflessione e un'analisi approfondita prima di rispondere.
+
+
+Evita domande ovvie o banali, concentrandoti su concetti che richiedano una buona comprensione e una valutazione critica.
+Le opzioni di risposta (a) Vero e (b) Falso devono essere equilibrate in modo che nessuna delle due sembri più probabile o ovvia come corretta.
+Ogni domanda deve essere seguita dalle sue due opzioni di risposta, formulate chiaramente, precedute da un asterisco (*).
+Alla fine del quiz, fornisci le risposte nel formato: numero_della_domanda.(lettera_della_risposta). Non aggiungere spiegazioni o parole in grassetto nelle risposte.
+Esempio:
+
+
+L'acqua è l'unico liquido presente naturalmente in tutti e tre gli stati della materia (solido, liquido e gassoso) sulla Terra.
+(a) Vero
+(b) Falso
+Risposte: 1.(a)
