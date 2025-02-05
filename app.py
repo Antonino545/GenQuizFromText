@@ -126,5 +126,16 @@ def results():
                            answers=session.get("answers", {}),
                            questions=questions)
 
+@app.route("/reload")
+def reload_file():
+    global questions
+    # Rilegge il file e aggiorna le domande
+    parser = QuizParser("quiz.txt")
+    parser.parse_file()
+    questions = sorted(parser.questions, key=lambda q: q.number)
+    # Reset della sessione
+    session.clear()
+    return redirect(url_for("index"))
+
 if __name__ == "__main__":
     app.run(debug=True)
