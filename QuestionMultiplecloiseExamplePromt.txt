@@ -1,5 +1,11 @@
 Genera un quiz con 20 domande a scelta multipla, seguendo le seguenti indicazioni per il formato:
-
-Ogni domanda deve essere numerata, iniziando da '1.' e proseguendo fino a '20.'. Ogni domanda deve avere 4 opzioni di risposta, etichettate con (a), (b), (c), (d). Ogni domanda deve essere dettagliata e complessa, con un contesto chiaro, e deve richiedere una riflessione per rispondere correttamente. Le domande dovrebbero coprire vari ambiti, in modo da stimolare la riflessione e l'analisi. Ogni opzione di risposta deve essere formulata in modo simile per lunghezza e complessità, evitando risposte troppo ovvie o banali. Le opzioni di risposta devono essere equilibrate tra loro, in modo che nessuna sia facilmente identificabile come corretta. Ogni domanda deve essere seguita dalle sue opzioni, ciascuna preceduta da un asterisco (*). Alla fine del quiz, fornisci le risposte nel formato numero_della_domanda.(lettera_della_risposta). Non usare parole in grassetto, e le risposte devono essere chiare e concise.
-
+Ogni domanda deve essere numerata, iniziando da '1.' e proseguendo fino a '20.'. Ogni domanda deve avere 4 opzioni di risposta, etichettate con (a), (b), (c), (d).
+Ogni domanda deve essere dettagliata e complessa, con un contesto chiaro, e deve richiedere una riflessione per rispondere correttamente.
+Le domande dovrebbero coprire vari ambiti, in modo da stimolare la riflessione e l'analisi.
+Ogni opzione di risposta deve essere formulata in modo simile per lunghezza e complessità, evitando risposte troppo ovvie o banali.
+Le opzioni di risposta devono essere equilibrate tra loro, in modo che nessuna sia facilmente identificabile come corretta.
+Ogni domanda deve essere seguita dalle sue opzioni, ciascuna preceduta da un asterisco (*).
+Alla fine del quiz, fornisci le risposte nel formato numero_della_domanda.(lettera_della_risposta).
+Non usare parole in grassetto, e le risposte devono essere chiare e concise.
 Evita domande che possano risultare banali o troppo facili, concentrandoti su argomenti che richiedano una buona comprensione dei concetti."
+FAI TANTI trobocchetti risposte simili che ti ingannano ma sbagliate

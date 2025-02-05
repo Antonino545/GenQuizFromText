@@ -1,3 +1,1 @@
-questo programma converte il quiz txt in un quiz intereattivo da console in python
-
-```
+Questo programma converte il quiz txt in un quiz intereattivo da console in python

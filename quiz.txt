@@ -1,83 +1,122 @@
+1. In un sistema operativo moderno che implementa il multi-tasking e il time-sharing, quale delle seguenti affermazioni descrive meglio la necessità di gestire la memoria primaria?
+ * (a) La memoria primaria deve essere gestita per massimizzare l'uso della CPU, consentendo a un singolo processo di utilizzare tutte le risorse disponibili in modo esclusivo.
+ * (b) La memoria primaria deve essere gestita in modo da allocare dinamicamente lo spazio di RAM ai processi attivi, garantendo che ogni processo sia pronto a utilizzare la CPU quando gli viene assegnata.
+ * (c) La gestione della memoria primaria è necessaria solo quando un processo termina o viene sospeso, per liberare spazio per nuovi processi in esecuzione.
+ * (d) La gestione della memoria primaria deve assicurare che i processi siano allocati in aree di RAM contigue per garantire la massima efficienza nell'accesso ai dati.
 
-1.  Nel modello a cascata, una delle caratteristiche principali è che i requisiti vengono definiti in dettaglio solo all'inizio del progetto, e non sono previste modifiche sostanziali in fasi successive.
-    *   (a) Vero
-    *   (b) Falso
+2. Il meccanismo di swapping, benché non ampiamente utilizzato nei sistemi operativi contemporanei, introduce un concetto chiave nella gestione della memoria. Qual è questo concetto?
+ * (a) La necessità di allocare dinamicamente spazio di memoria primaria a processi in attesa di completare operazioni di I/O, riducendo la frammentazione interna.
+ * (b) La possibilità di estendere la capacità della memoria primaria utilizzando un'area di swap sull'hard disk, permettendo l'esecuzione di più processi di quanti ne potrebbe ospitare la sola RAM.
+ * (c) La capacità di copiare temporaneamente immagini di processi dalla RAM all'hard disk, evitando così la necessità di rilocare dinamicamente i processi in memoria.
+ * (d) L'importanza di caricare il codice dei processi in memoria secondaria prima della loro esecuzione, in modo da ottimizzare l'uso della RAM.
 
-2.  Durante la fase di ideazione in UP, l'obiettivo principale è raccogliere tutti i requisiti del sistema, creare stime precise e piani di progetto affidabili, per poi procedere allo sviluppo.
-    *   (a) Vero
-    *   (b) Falso
+3.  Cosa si intende per "binding degli indirizzi" in relazione alla gestione della memoria?
+ * (a) L'operazione di assegnazione di nomi simbolici alle variabili in un programma sorgente, che avviene durante la fase di compilazione del codice.
+ * (b) L'associazione tra le variabili e le istruzioni del programma con gli indirizzi di memoria fisica durante le fasi di compilazione, caricamento o esecuzione.
+ * (c) Il processo di allocazione dinamica della memoria durante l'esecuzione di un programma, che permette di ridimensionare lo spazio di memoria assegnato alle variabili.
+ * (d) La trasformazione degli indirizzi logici in indirizzi fisici, effettuata dalla MMU (Memory Management Unit) al momento dell'accesso alla memoria.
 
-3.  I casi d'uso in UP sono principalmente diagrammi che mostrano le interazioni tra gli attori e il sistema, piuttosto che documenti testuali che descrivono scenari d'uso.
-    *   (a) Vero
-    *   (b) Falso
+4.  Qual è la principale differenza tra codice statico, codice staticamente rilocabile e codice dinamicamente rilocabile riguardo al binding degli indirizzi?
+ * (a) Il codice statico associa gli indirizzi in fase di esecuzione, il codice staticamente rilocabile in fase di caricamento, e il codice dinamicamente rilocabile in fase di compilazione.
+ * (b) Il codice statico usa indirizzi assoluti, il codice staticamente rilocabile indirizzi relativi trasformati in fase di caricamento, e il codice dinamicamente rilocabile indirizzi relativi trasformati durante l'esecuzione.
+ * (c) Il codice statico e staticamente rilocabile usa indirizzi assoluti, mentre il codice dinamicamente rilocabile utilizza indirizzi relativi.
+ * (d) Il codice statico utilizza indirizzi relativi, mentre il codice staticamente e dinamicamente rilocabile usa indirizzi assoluti.
 
-4.  Un attore di supporto in un caso d'uso è colui che interagisce direttamente con il sistema per raggiungere un obiettivo specifico, mentre un attore primario offre un servizio al sistema.
-    *   (a) Vero
-    *   (b) Falso
+5. In un sistema con codice dinamicamente rilocabile, come viene gestita la trasformazione degli indirizzi logici in indirizzi fisici?
+ * (a) La trasformazione viene effettuata dal compilatore al momento della compilazione del codice, generando indirizzi assoluti che puntano direttamente alle celle di memoria fisica.
+ * (b) La trasformazione viene gestita dal loader durante il caricamento del codice in memoria primaria, assegnando indirizzi relativi che dipendono dalla posizione di caricamento.
+ * (c) La trasformazione è compiuta dalla Memory Management Unit (MMU) durante l'esecuzione del programma, usando un registro di rilocazione per convertire gli indirizzi relativi in assoluti.
+ * (d) La trasformazione è eseguita dal sistema operativo durante il context switch, aggiornando i registri della CPU per puntare alle posizioni corrette nella memoria fisica.
 
-5.  Le estensioni di un caso d'uso descrivono principalmente variazioni di successo dello scenario principale, mentre gli scenari di fallimento sono trattati separatamente.
-    *   (a) Vero
-    *   (b) Falso
+6.  Cosa si intende per "spazio di indirizzamento logico" di un programma?
+ * (a) L'intervallo di indirizzi fisici in RAM dove il codice e i dati del programma sono effettivamente memorizzati e accessibili durante l'esecuzione.
+ * (b) L'insieme degli indirizzi relativi utilizzati dal programma, che vanno da 0 fino all'indirizzo massimo dell'ultima cella di memoria occupata dal codice e dai dati del programma, visti come uno spazio contiguo.
+ * (c) L'intervallo degli indirizzi assoluti utilizzati dal programma, che viene determinato in fase di compilazione e caricamento del codice in memoria primaria.
+ * (d) L'insieme di tutti gli indirizzi di memoria disponibili in un sistema, che possono essere utilizzati per allocare sia il codice che i dati di un programma.
 
-6.  Lo stile essenziale nella scrittura di un caso d'uso implica la descrizione dettagliata delle interazioni dell'utente con l'interfaccia, focalizzandosi sulle azioni concrete e sui dettagli tecnologici.
-    *   (a) Vero
-    *   (b) Falso
+7. Qual è la funzione del registro di rilocazione nella gestione della memoria con indirizzi dinamicamente rilocabili?
+ * (a) Il registro di rilocazione contiene l'indirizzo fisico di partenza della memoria allocata a un processo, permettendo di calcolare gli indirizzi fisici reali a partire da quelli logici.
+ * (b) Il registro di rilocazione contiene la dimensione della memoria allocata a un processo, permettendo di controllare che non acceda ad aree di memoria proibite.
+ * (c) Il registro di rilocazione memorizza l'indirizzo logico di partenza di un programma, garantendo che il programma acceda solo agli indirizzi logici validi.
+ * (d) Il registro di rilocazione tiene traccia dell'ultima posizione di memoria accessibile da un processo, proteggendo da accessi errati in caso di errori di programmazione.
 
-7.  Il test del capo, utilizzato per valutare l'utilità di un caso d'uso, si basa sulla verifica se il caso d'uso descrive un'attività di valore dal punto di vista del management.
-    *   (a) Vero
-    *   (b) Falso
+8. In un sistema con spazi di indirizzamento logici e fisici distinti, quale relazione è tipicamente vera?
+ * (a) La dimensione dello spazio di indirizzamento logico è sempre uguale alla dimensione dello spazio di indirizzamento fisico, garantendo una corrispondenza uno-a-uno.
+ * (b) La dimensione della RAM è sempre maggiore della dimensione dello spazio di indirizzamento fisico e logico, per consentire l'esecuzione di più processi contemporaneamente.
+ * (c) La dimensione della RAM è di solito inferiore alla dimensione dello spazio di indirizzamento fisico, che a sua volta è inferiore alla dimensione dello spazio di indirizzamento logico.
+ * (d) La dimensione dello spazio di indirizzamento fisico è sempre maggiore della dimensione dello spazio di indirizzamento logico, per consentire al sistema di supportare più processi.
 
-8.  Un modello di dominio in UP ha lo scopo principale di definire le classi software che implementeranno il sistema, e non di rappresentare concetti del mondo reale.
-    *   (a) Vero
-    *   (b) Falso
+9. Le librerie dinamiche sono un componente fondamentale dei moderni sistemi operativi. Qual è il principale vantaggio del loro utilizzo rispetto alle librerie statiche?
+ * (a) Le librerie dinamiche vengono caricate in RAM durante la compilazione del programma, riducendo il tempo di esecuzione e il consumo di RAM.
+ * (b) Le librerie dinamiche vengono collegate al codice del programma in fase di caricamento, permettendo un'allocazione di memoria efficiente ma aumentando la dimensione dell'eseguibile.
+ * (c) Le librerie dinamiche vengono caricate in RAM solo quando il programma chiama una subroutine, evitando la duplicazione di codice e riducendo il consumo di memoria.
+ * (d) Le librerie dinamiche sono incorporate all'interno del codice eseguibile, garantendo che il programma abbia sempre accesso alle funzioni di libreria necessarie senza dipendenze esterne.
 
-9.  In un modello di dominio, un'associazione è un attributo che specifica una relazione tra due classi, non una connessione concettuale tra di esse.
-    *   (a) Vero
-    *   (b) Falso
+10. Nelle tecniche di allocazione contigua della memoria, cosa si intende per "frammentazione interna"?
+ * (a) La situazione in cui la memoria libera è frammentata in piccoli blocchi non contigui, che non possono essere utilizzati per allocare processi di dimensioni maggiori.
+ * (b) La perdita di spazio di memoria all'interno di una partizione allocata a un processo, quando la dimensione della partizione è maggiore della dimensione del processo.
+ * (c) La condizione in cui un processo non riesce a essere caricato in memoria a causa della mancanza di uno spazio contiguo sufficiente, anche se la somma degli spazi liberi è adeguata.
+ * (d) La situazione in cui la memoria utilizzata dal sistema operativo non è contigua, ma frammentata in diverse aree, causando inefficienza nell'accesso ai dati.
 
-10. Un attributo derivato in un modello di dominio è un valore che viene calcolato o derivato dalle informazioni contenute negli oggetti associati, e non memorizzato direttamente.
-    *   (a) Vero
-    *   (b) Falso
+11. Quale svantaggio è associato all'allocazione a partizioni multiple fisse della memoria?
+ * (a) Non è possibile proteggere le partizioni da accessi proibiti da parte di altri processi, a meno che non si usi codice non rilocabile.
+ * (b) Si verifica frammentazione esterna, a causa di buchi non contigui tra le partizioni, che impediscono l'allocazione di processi più grandi della singola partizione più grande.
+ * (c) Si verifica frammentazione interna, poiché spesso le dimensioni dei processi non corrispondono esattamente alle dimensioni delle partizioni.
+ * (d) Non è possibile il multiprogramming, perchè si possono tenere in memoria più processi che partizioni disponibili.
 
-11. I diagrammi di sequenza di sistema (SSD) sono strumenti per descrivere nel dettaglio le interazioni tra gli oggetti all'interno del sistema, con particolare attenzione ai dettagli implementativi.
-    *   (a) Vero
-    *   (b) Falso
+12. Qual è lo scopo principale della compattazione della memoria nell'allocazione a partizioni multiple variabili?
+ * (a) La compattazione mira a ridurre la frammentazione interna, liberando spazio all'interno delle partizioni allocato ai processi.
+ * (b) La compattazione serve per ridurre il numero di partizioni occupate in memoria, liberando spazio di indirizzamento logico.
+ * (c) La compattazione ha lo scopo di spostare le partizioni dei processi per renderle contigue, riducendo così la frammentazione esterna e creando un unico grande blocco di memoria libera.
+ * (d) La compattazione ha come obiettivo la riduzione dei tempi di accesso alla memoria, riorganizzando le partizioni in modo più efficiente.
 
-12. Un contratto in UP descrive come un'operazione di sistema deve essere implementata in termini di codice e tecnologia, con particolare attenzione ai dettagli implementativi.
-    *   (a) Vero
-    *   (b) Falso
+13. Qual è la caratteristica distintiva della paginazione della memoria rispetto all'allocazione contigua?
+ * (a) La paginazione alloca ai processi aree di memoria contigue, mentre l'allocazione contigua suddivide lo spazio di memoria in piccole parti non contigue.
+ * (b) La paginazione divide lo spazio logico in pagine di dimensione fissa e la memoria fisica in frame, mentre l'allocazione contigua assegna spazi di memoria di dimensioni variabili.
+ * (c) La paginazione è una forma di allocazione contigua della memoria, ma implementata a livello hardware per una maggiore efficienza.
+ * (d) La paginazione permette che le pagine di un processo siano allocate in frame non contigui della memoria fisica, superando i limiti dell'allocazione contigua.
 
-13. Le pre-condizioni di un contratto descrivono lo stato del sistema dopo l'esecuzione di un'operazione, mentre le post-condizioni specificano lo stato del sistema prima dell'operazione.
-    *   (a) Vero
-    *   (b) Falso
+14. Cosa rappresenta la "tabella delle pagine" (Page Table) in un sistema di paginazione?
+ * (a) Un'area della memoria fisica in cui sono memorizzate tutte le pagine di un processo, accessibile in modo diretto.
+ * (b) Una struttura dati utilizzata dal sistema operativo per tenere traccia delle pagine allocate ai processi, contenendo i numeri dei frame in cui sono caricate le pagine.
+ * (c) Una tabella che mappa gli indirizzi logici agli indirizzi fisici, gestita direttamente dall'hardware della CPU per una traduzione veloce degli indirizzi.
+ * (d) Un registro hardware che memorizza gli indirizzi di partenza delle pagine di un processo, utilizzato durante la traduzione degli indirizzi.
 
-14.  Nello sviluppo agile, l'obiettivo principale è pianificare tutti i dettagli del progetto all'inizio, con poche modifiche durante lo sviluppo.
-    *  (a) Vero
-    *  (b) Falso
+15. In un sistema di paginazione, come viene tradotto un indirizzo logico (pagina, offset) in un indirizzo fisico?
+ * (a) L'indirizzo logico viene tradotto direttamente in indirizzo fisico tramite un'operazione di somma tra la pagina e l'offset.
+ * (b) Il numero di pagina viene utilizzato come indice nella page table per recuperare l'indirizzo base del frame, a cui viene sommato l'offset.
+ * (c) Il numero di pagina viene moltiplicato per la dimensione del frame, per ottenere l'indirizzo fisico corretto.
+ * (d) L'offset viene utilizzato come indice nella tabella delle pagine, per determinare il numero del frame in cui è contenuta la pagina desiderata.
 
-15. Il principio GRASP di Information Expert suggerisce di assegnare le responsabilità a un oggetto che possiede le informazioni necessarie per soddisfarla.
-    *   (a) Vero
-    *   (b) Falso
+16. Qual è il principale vantaggio dell'utilizzo di pagine e frame di dimensioni pari a potenze di due nella paginazione della memoria?
+ * (a) Permette di semplificare le operazioni di somma per calcolare gli indirizzi fisici e di risparmiare spazio nelle tabelle delle pagine.
+ * (b) Permette una conversione efficiente tra indirizzi logici e fisici e di semplificare la gestione delle tabelle delle pagine, consentendo operazioni bit a bit al posto di somme.
+ * (c) Rende più facile la gestione dei frame liberi in memoria fisica, riducendo la frammentazione esterna e velocizzando l'allocazione della memoria.
+ * (d) Consente di utilizzare indirizzi logici e fisici di dimensione variabile, adattandosi alle esigenze dei diversi programmi.
 
-16. Il pattern Controller assegna la responsabilità di gestire gli eventi di sistema all'interfaccia utente, separando la logica dell'applicazione dalla presentazione.
-    *   (a) Vero
-    *   (b) Falso
+17. Cosa rappresenta il Translation Look-aside Buffer (TLB) nel contesto della paginazione della memoria?
+ * (a) Un registro della CPU in cui vengono memorizzati gli indirizzi fisici delle pagine più frequentemente usate da un processo, per velocizzare l'accesso alla memoria.
+ * (b) Una memoria associativa gestita dal sistema operativo, dove vengono memorizzate le entry della tabella delle pagine, con un accesso più veloce rispetto alla RAM.
+ * (c) Una cache della CPU che memorizza una parte della tabella delle pagine, riducendo il tempo necessario per la traduzione degli indirizzi da logici a fisici.
+ * (d) Un buffer di memoria ad alta velocità in cui vengono caricate le istruzioni e i dati di un programma, per velocizzare l'esecuzione delle istruzioni.
 
-17. Il pattern Composite è utilizzato per definire una famiglia di algoritmi intercambiabili, incapsulando ciascuno di essi in una classe separata.
-    *   (a) Vero
-    *   (b) Falso
+18. In un sistema di paginazione, quale tipo di frammentazione può ancora verificarsi?
+ * (a) Frammentazione esterna, causata da buchi non contigui nella memoria fisica.
+ * (b) Frammentazione interna, dovuta alla dimensione non perfetta dei processi rispetto alle partizioni di memoria allocata.
+ * (c) Frammentazione logica, causata da indirizzi logici non contigui.
+ * (d) Nessun tipo di frammentazione, perché la paginazione elimina completamente la frammentazione.
 
-18. Il pattern Visitor consente di aggiungere nuove operazioni a una gerarchia di oggetti senza modificare le classi degli oggetti stessi.
-    *   (a) Vero
-    *   (b) Falso
+19. In un sistema con paginazione a più livelli, qual è lo scopo di suddividere ulteriormente la tabella delle pagine?
+ * (a) Aumentare la velocità di accesso alla tabella delle pagine, memorizzando le entry più frequentemente usate in una cache veloce.
+ * (b) Ridurre lo spazio di memoria necessario per memorizzare le tabelle delle pagine, soprattutto in presenza di indirizzamento logico molto ampio.
+ * (c) Migliorare la sicurezza del sistema, dividendo la tabella delle pagine in blocchi protetti con diversi livelli di accesso.
+ * (d) Semplificare la gestione della memoria, dividendo la tabella delle pagine in blocchi allocati in modo dinamico.
 
-19.  Nello sviluppo Test-Driven Development (TDD), i test unitari vengono scritti dopo che il codice è stato implementato, per verificare la correttezza del codice scritto.
-    *   (a) Vero
-    *   (b) Falso
-
-20. Il refactoring è una pratica che consiste nel modificare il codice senza alterarne la funzionalità, con lo scopo di migliorarne la leggibilità e la manutenibilità.
-    *   (a) Vero
-    *   (b) Falso
+20. Qual è il principio di base della Tabella delle Pagine Invertita (IPT)?
+ * (a) Ogni entry della tabella delle pagine invertita corrisponde ad un processo, e contiene l'indirizzo fisico di partenza della memoria del processo.
+ * (b) C'è una tabella delle pagine invertita per ogni processo, contenente gli indirizzi fisici delle pagine del processo.
+ * (c) C'è una sola tabella delle pagine invertita per tutto il sistema, che descrive l'occupazione dei frame nella memoria fisica.
+ * (d) La tabella delle pagine invertita è utilizzata per mappare gli indirizzi fisici agli indirizzi logici, invertendo il normale processo di paginazione.
 
 Risposte:
-1.(a) 2.(b) 3.(b) 4.(b) 5.(b) 6.(b) 7.(a) 8.(b) 9.(b) 10.(a) 11.(b) 12.(b) 13.(b) 14.(b) 15.(a) 16.(b) 17.(b) 18.(a) 19.(b) 20.(a)
+1.(b) 2.(b) 3.(b) 4.(b) 5.(c) 6.(b) 7.(a) 8.(c) 9.(c) 10.(b) 11.(c) 12.(c) 13.(d) 14.(b) 15.(b) 16.(b) 17.(c) 18.(b) 19.(b) 20.(c)
