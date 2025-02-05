@@ -9,3 +9,4 @@ Alla fine del quiz, fornisci le risposte nel formato numero_della_domanda.(lette
 Non usare parole in grassetto, e le risposte devono essere chiare e concise.
 Evita domande che possano risultare banali o troppo facili, concentrandoti su argomenti che richiedano una buona comprensione dei concetti."
 FAI TANTI trobocchetti risposte simili che ti ingannano ma sbagliate
+DEVI Attenerti strettamente alla Fondi
