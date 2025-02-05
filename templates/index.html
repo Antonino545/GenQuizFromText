@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz Interattivo</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="card shadow">
+        <div class="card-body text-center">
+          <h1 class="card-title">Benvenuto al Quiz!</h1>
+          <p class="card-text">Preparati a mettere alla prova le tue conoscenze.</p>
+          <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">Inizia il Quiz</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

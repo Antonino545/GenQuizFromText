@@ -1,122 +1,124 @@
-1. In un sistema operativo moderno che implementa il multi-tasking e il time-sharing, quale delle seguenti affermazioni descrive meglio la necessità di gestire la memoria primaria?
- * (a) La memoria primaria deve essere gestita per massimizzare l'uso della CPU, consentendo a un singolo processo di utilizzare tutte le risorse disponibili in modo esclusivo.
- * (b) La memoria primaria deve essere gestita in modo da allocare dinamicamente lo spazio di RAM ai processi attivi, garantendo che ogni processo sia pronto a utilizzare la CPU quando gli viene assegnata.
- * (c) La gestione della memoria primaria è necessaria solo quando un processo termina o viene sospeso, per liberare spazio per nuovi processi in esecuzione.
- * (d) La gestione della memoria primaria deve assicurare che i processi siano allocati in aree di RAM contigue per garantire la massima efficienza nell'accesso ai dati.
+Ecco un quiz di 20 domande a scelta multipla sulla memoria virtuale, con particolare attenzione ai dettagli e ai concetti chiave, formulato per stimolare la riflessione e l'analisi:
 
-2. Il meccanismo di swapping, benché non ampiamente utilizzato nei sistemi operativi contemporanei, introduce un concetto chiave nella gestione della memoria. Qual è questo concetto?
- * (a) La necessità di allocare dinamicamente spazio di memoria primaria a processi in attesa di completare operazioni di I/O, riducendo la frammentazione interna.
- * (b) La possibilità di estendere la capacità della memoria primaria utilizzando un'area di swap sull'hard disk, permettendo l'esecuzione di più processi di quanti ne potrebbe ospitare la sola RAM.
- * (c) La capacità di copiare temporaneamente immagini di processi dalla RAM all'hard disk, evitando così la necessità di rilocare dinamicamente i processi in memoria.
- * (d) L'importanza di caricare il codice dei processi in memoria secondaria prima della loro esecuzione, in modo da ottimizzare l'uso della RAM.
+1.  In un sistema di memoria virtuale, quale tra le seguenti affermazioni descrive meglio lo scopo principale della memoria virtuale?
+    *   (a) Ridurre la frammentazione esterna della memoria primaria, consentendo allocazioni più efficienti di spazio contiguo.
+    *   (b) Permettere l'esecuzione di processi che richiedono più spazio di indirizzamento logico rispetto alla dimensione fisica della memoria primaria.
+    *   (c) Aumentare la velocità di accesso ai dati, tramite l'utilizzo di una memoria cache ad alta velocità tra la CPU e la RAM.
+    *   (d) Ottimizzare la gestione della memoria secondaria, memorizzando in modo efficiente i dati e migliorando il tempo di accesso al disco.
 
-3.  Cosa si intende per "binding degli indirizzi" in relazione alla gestione della memoria?
- * (a) L'operazione di assegnazione di nomi simbolici alle variabili in un programma sorgente, che avviene durante la fase di compilazione del codice.
- * (b) L'associazione tra le variabili e le istruzioni del programma con gli indirizzi di memoria fisica durante le fasi di compilazione, caricamento o esecuzione.
- * (c) Il processo di allocazione dinamica della memoria durante l'esecuzione di un programma, che permette di ridimensionare lo spazio di memoria assegnato alle variabili.
- * (d) La trasformazione degli indirizzi logici in indirizzi fisici, effettuata dalla MMU (Memory Management Unit) al momento dell'accesso alla memoria.
+2.  Quale tra le seguenti situazioni potrebbe indicare la necessità di utilizzare la paginazione su richiesta (demand paging) in un sistema di gestione della memoria?
+    *   (a) Un programma sta per essere eseguito, e tutte le pagine del programma sono state caricate in memoria primaria prima dell'avvio dell'esecuzione.
+    *  (b) Un processo ha appena generato un indirizzo logico, ma la pagina corrispondente non è presente in memoria primaria, e deve essere caricata.
+    *   (c) La CPU sta processando un'istruzione di I/O, e il sistema operativo deve allocare spazio in memoria primaria per i dati in arrivo dal dispositivo.
+    *   (d) Una pagina di un processo è stata rimossa dalla memoria primaria a causa di un algoritmo di sostituzione, e il processo non vi farà più riferimento.
 
-4.  Qual è la principale differenza tra codice statico, codice staticamente rilocabile e codice dinamicamente rilocabile riguardo al binding degli indirizzi?
- * (a) Il codice statico associa gli indirizzi in fase di esecuzione, il codice staticamente rilocabile in fase di caricamento, e il codice dinamicamente rilocabile in fase di compilazione.
- * (b) Il codice statico usa indirizzi assoluti, il codice staticamente rilocabile indirizzi relativi trasformati in fase di caricamento, e il codice dinamicamente rilocabile indirizzi relativi trasformati durante l'esecuzione.
- * (c) Il codice statico e staticamente rilocabile usa indirizzi assoluti, mentre il codice dinamicamente rilocabile utilizza indirizzi relativi.
- * (d) Il codice statico utilizza indirizzi relativi, mentre il codice staticamente e dinamicamente rilocabile usa indirizzi assoluti.
+3.  Cosa succede quando si verifica un page fault in un sistema con paginazione su richiesta?
+    *   (a) Il processo viene terminato immediatamente dal sistema operativo, per evitare l'uso di risorse di memoria non allocate.
+    *   (b) La CPU continua l'esecuzione, attendendo che la pagina mancante venga caricata da una memoria secondaria.
+    *   (c) Il processo viene sospeso, la pagina mancante viene caricata in memoria primaria, e il processo viene riavviato dall'istruzione che ha causato il fault.
+    *   (d) Il sistema operativo genera un errore di protezione e blocca il tentativo di accesso alla pagina mancante.
 
-5. In un sistema con codice dinamicamente rilocabile, come viene gestita la trasformazione degli indirizzi logici in indirizzi fisici?
- * (a) La trasformazione viene effettuata dal compilatore al momento della compilazione del codice, generando indirizzi assoluti che puntano direttamente alle celle di memoria fisica.
- * (b) La trasformazione viene gestita dal loader durante il caricamento del codice in memoria primaria, assegnando indirizzi relativi che dipendono dalla posizione di caricamento.
- * (c) La trasformazione è compiuta dalla Memory Management Unit (MMU) durante l'esecuzione del programma, usando un registro di rilocazione per convertire gli indirizzi relativi in assoluti.
- * (d) La trasformazione è eseguita dal sistema operativo durante il context switch, aggiornando i registri della CPU per puntare alle posizioni corrette nella memoria fisica.
+4.  Quale tra le seguenti affermazioni descrive correttamente la funzione del bit di validità associato ad ogni entry della tabella delle pagine?
+    *   (a) Indica se la pagina associata è stata modificata dall'ultima volta in cui è stata caricata in memoria primaria.
+    *   (b) Specifica se la pagina associata è stata appena caricata dalla memoria secondaria o se era già in RAM.
+    *   (c) Determina se la pagina associata è attualmente in memoria primaria o se si trova in memoria secondaria.
+    *   (d) Definisce la priorità di una pagina nella memoria principale, e indica se deve essere rimossa per prima in caso di necessità.
 
-6.  Cosa si intende per "spazio di indirizzamento logico" di un programma?
- * (a) L'intervallo di indirizzi fisici in RAM dove il codice e i dati del programma sono effettivamente memorizzati e accessibili durante l'esecuzione.
- * (b) L'insieme degli indirizzi relativi utilizzati dal programma, che vanno da 0 fino all'indirizzo massimo dell'ultima cella di memoria occupata dal codice e dai dati del programma, visti come uno spazio contiguo.
- * (c) L'intervallo degli indirizzi assoluti utilizzati dal programma, che viene determinato in fase di compilazione e caricamento del codice in memoria primaria.
- * (d) L'insieme di tutti gli indirizzi di memoria disponibili in un sistema, che possono essere utilizzati per allocare sia il codice che i dati di un programma.
+5.  Considerando la formula eat = [(1-p) × ma] + [p× tempo di gestione del page fault], qual è l'impatto di un aumento della probabilità di page fault (p) sul tempo effettivo di accesso alla memoria (eat)?
+    *   (a) Un aumento di p diminuisce il tempo effettivo di accesso alla memoria, poiche meno pagine devono essere recuperate dalla memoria secondaria.
+    *   (b) Un aumento di p non ha effetto sul tempo effettivo di accesso alla memoria, poichè l'impatto del page fault è trascurabile.
+    *   (c) Un aumento di p incrementa il tempo effettivo di accesso alla memoria, poichè vengono introdotti numerosi ritardi per gestire i page fault.
+    *   (d) Un aumento di p diminuisce il tempo effettivo di accesso alla memoria, ma solo se il tempo di gestione del page fault è inferiore al tempo di accesso in memoria principale.
 
-7. Qual è la funzione del registro di rilocazione nella gestione della memoria con indirizzi dinamicamente rilocabili?
- * (a) Il registro di rilocazione contiene l'indirizzo fisico di partenza della memoria allocata a un processo, permettendo di calcolare gli indirizzi fisici reali a partire da quelli logici.
- * (b) Il registro di rilocazione contiene la dimensione della memoria allocata a un processo, permettendo di controllare che non acceda ad aree di memoria proibite.
- * (c) Il registro di rilocazione memorizza l'indirizzo logico di partenza di un programma, garantendo che il programma acceda solo agli indirizzi logici validi.
- * (d) Il registro di rilocazione tiene traccia dell'ultima posizione di memoria accessibile da un processo, proteggendo da accessi errati in caso di errori di programmazione.
+6.  Qual è il ruolo principale dell'area di swap in un sistema di memoria virtuale?
+    *   (a) Memorizzare temporaneamente le pagine dei processi in attesa di esecuzione, incrementando la velocità di avvio dei processi.
+    *   (b) Servire come una cache di memoria ad alta velocità per i dati più frequentemente usati, riducendo l'accesso alla memoria primaria.
+    *   (c) Conservare le pagine dei processi che sono state rimosse dalla memoria primaria per liberare spazio a nuove pagine o a pagine necessarie in quel momento, e permettere di recuperarle in caso di necessità.
+    *   (d) Gestire la comunicazione con la CPU, memorizzando le istruzioni in attesa di essere eseguite, e coordinando i processi in coda di Ready.
 
-8. In un sistema con spazi di indirizzamento logici e fisici distinti, quale relazione è tipicamente vera?
- * (a) La dimensione dello spazio di indirizzamento logico è sempre uguale alla dimensione dello spazio di indirizzamento fisico, garantendo una corrispondenza uno-a-uno.
- * (b) La dimensione della RAM è sempre maggiore della dimensione dello spazio di indirizzamento fisico e logico, per consentire l'esecuzione di più processi contemporaneamente.
- * (c) La dimensione della RAM è di solito inferiore alla dimensione dello spazio di indirizzamento fisico, che a sua volta è inferiore alla dimensione dello spazio di indirizzamento logico.
- * (d) La dimensione dello spazio di indirizzamento fisico è sempre maggiore della dimensione dello spazio di indirizzamento logico, per consentire al sistema di supportare più processi.
+7.  Qual è una possibile conseguenza di avere un'area di swap troppo piccola rispetto alle esigenze del sistema di memoria virtuale?
+    *   (a) Una diminuzione del numero di page fault, poichè lo spazio in memoria secondaria non è sufficiente a contenere le pagine che possono generare un page fault.
+    *   (b) Un aumento del tempo di accesso alla memoria primaria, poichè il sistema impiega più tempo per scrivere le pagine in un'area di swap sovraffollata.
+    *   (c) Un'alta probabilità di thrashing, poichè il sistema non riesce a gestire le pagine che devono essere spostate dalla memoria primaria a quella secondaria, e viceversa.
+    *  (d) Nessuna conseguenza significativa, poichè la memoria virtuale è indipendente dalle dimensioni dell'area di swap, e gestisce in modo efficiente lo spazio disponibile.
 
-9. Le librerie dinamiche sono un componente fondamentale dei moderni sistemi operativi. Qual è il principale vantaggio del loro utilizzo rispetto alle librerie statiche?
- * (a) Le librerie dinamiche vengono caricate in RAM durante la compilazione del programma, riducendo il tempo di esecuzione e il consumo di RAM.
- * (b) Le librerie dinamiche vengono collegate al codice del programma in fase di caricamento, permettendo un'allocazione di memoria efficiente ma aumentando la dimensione dell'eseguibile.
- * (c) Le librerie dinamiche vengono caricate in RAM solo quando il programma chiama una subroutine, evitando la duplicazione di codice e riducendo il consumo di memoria.
- * (d) Le librerie dinamiche sono incorporate all'interno del codice eseguibile, garantendo che il programma abbia sempre accesso alle funzioni di libreria necessarie senza dipendenze esterne.
+8.  Quando una pagina vittima deve essere salvata nell'area di swap?
+    *  (a) Quando la pagina è stata acceduta solo in lettura, per preservare le modifiche originali in memoria secondaria.
+    *  (b) Quando la pagina non è stata modificata da quando è stata caricata in memoria primaria, per non sprecare tempo di scrittura.
+    *   (c) Quando la pagina è stata modificata in memoria primaria e non è stata copiata in memoria secondaria, oppure fa parte dello stack o della heap di un processo.
+    *   (d) Quando si deve liberare spazio per caricare una nuova pagina, indipendentemente dal fatto che la pagina sia stata modificata o meno.
 
-10. Nelle tecniche di allocazione contigua della memoria, cosa si intende per "frammentazione interna"?
- * (a) La situazione in cui la memoria libera è frammentata in piccoli blocchi non contigui, che non possono essere utilizzati per allocare processi di dimensioni maggiori.
- * (b) La perdita di spazio di memoria all'interno di una partizione allocata a un processo, quando la dimensione della partizione è maggiore della dimensione del processo.
- * (c) La condizione in cui un processo non riesce a essere caricato in memoria a causa della mancanza di uno spazio contiguo sufficiente, anche se la somma degli spazi liberi è adeguata.
- * (d) La situazione in cui la memoria utilizzata dal sistema operativo non è contigua, ma frammentata in diverse aree, causando inefficienza nell'accesso ai dati.
+9.  Qual è la funzione del "dirty bit" associato a ciascuna entry della tabella delle pagine?
+    *   (a) Indica se la pagina associata è stata appena caricata dalla memoria secondaria.
+    *   (b) Serve come una specie di "semaforo" che indica la priorità di una pagina nella memoria principale.
+    *   (c) Segnala se la pagina associata è stata modificata (scritta) dopo essere stata caricata in memoria primaria.
+    *  (d) Indica se la pagina associata si trova in memoria principale o in memoria secondaria, consentendo un accesso più veloce.
 
-11. Quale svantaggio è associato all'allocazione a partizioni multiple fisse della memoria?
- * (a) Non è possibile proteggere le partizioni da accessi proibiti da parte di altri processi, a meno che non si usi codice non rilocabile.
- * (b) Si verifica frammentazione esterna, a causa di buchi non contigui tra le partizioni, che impediscono l'allocazione di processi più grandi della singola partizione più grande.
- * (c) Si verifica frammentazione interna, poiché spesso le dimensioni dei processi non corrispondono esattamente alle dimensioni delle partizioni.
- * (d) Non è possibile il multiprogramming, perchè si possono tenere in memoria più processi che partizioni disponibili.
+10. Quale tra le seguenti affermazioni descrive correttamente lo scopo degli algoritmi di sostituzione delle pagine?
+    *  (a) Ottimizzare il caricamento delle pagine dalla memoria secondaria alla memoria primaria, per minimizzare il tempo di attesa per l'utente.
+    *   (b) Stabilire quali frame della memoria primaria devono essere liberati, e quindi quali pagine devono essere rimosse, per fare spazio a nuove pagine.
+    *   (c) Organizzare le pagine all'interno della memoria primaria, per garantire un accesso più veloce a quelle più frequentemente usate.
+    *   (d) Gestire le code dei processi in attesa di essere eseguiti, garantendo un utilizzo efficiente della CPU e della memoria primaria.
 
-12. Qual è lo scopo principale della compattazione della memoria nell'allocazione a partizioni multiple variabili?
- * (a) La compattazione mira a ridurre la frammentazione interna, liberando spazio all'interno delle partizioni allocato ai processi.
- * (b) La compattazione serve per ridurre il numero di partizioni occupate in memoria, liberando spazio di indirizzamento logico.
- * (c) La compattazione ha lo scopo di spostare le partizioni dei processi per renderle contigue, riducendo così la frammentazione esterna e creando un unico grande blocco di memoria libera.
- * (d) La compattazione ha come obiettivo la riduzione dei tempi di accesso alla memoria, riorganizzando le partizioni in modo più efficiente.
+11. Cosa significa che un algoritmo di sostituzione delle pagine "minimizza il numero di page fault"?
+    *  (a) L'algoritmo cerca di mantenere in memoria primaria le pagine più usate, in modo da ridurre il numero di volte in cui il sistema deve caricare pagine dalla memoria secondaria.
+    *   (b) L'algoritmo cerca di caricare tutte le pagine necessarie all'avvio di un processo in memoria primaria, in modo da evitare page fault durante l'esecuzione.
+    *   (c) L'algoritmo cerca di scaricare le pagine che non vengono usate da tempo, riducendo il carico sulla memoria primaria e sul disco.
+    *   (d) L'algoritmo cerca di prevedere quali pagine saranno necessarie in futuro, caricandole in memoria in anticipo per evitare di generare page fault.
 
-13. Qual è la caratteristica distintiva della paginazione della memoria rispetto all'allocazione contigua?
- * (a) La paginazione alloca ai processi aree di memoria contigue, mentre l'allocazione contigua suddivide lo spazio di memoria in piccole parti non contigue.
- * (b) La paginazione divide lo spazio logico in pagine di dimensione fissa e la memoria fisica in frame, mentre l'allocazione contigua assegna spazi di memoria di dimensioni variabili.
- * (c) La paginazione è una forma di allocazione contigua della memoria, ma implementata a livello hardware per una maggiore efficienza.
- * (d) La paginazione permette che le pagine di un processo siano allocate in frame non contigui della memoria fisica, superando i limiti dell'allocazione contigua.
+12. Qual è la principale limitazione dell'algoritmo di sostituzione delle pagine FIFO (First-In, First-Out)?
+    *   (a) L'algoritmo tende a rimuovere dalla memoria primaria le pagine che sono state usate più di recente, portando ad un alto numero di page fault.
+    *   (b) L'algoritmo non considera la frequenza con cui le pagine sono state usate, quindi pagine usate frequentemente potrebbero essere rimosse prematuramente, causando un aumento dei page fault.
+    *   (c) L'algoritmo è difficile da implementare e richiede molte risorse, poichè non ha modo di riconoscere quando una pagina è stata caricata in memoria.
+    *   (d) L'algoritmo tende a rimuovere le pagine più vecchie anche se sono quelle più utili, a causa della sua natura ciclica.
 
-14. Cosa rappresenta la "tabella delle pagine" (Page Table) in un sistema di paginazione?
- * (a) Un'area della memoria fisica in cui sono memorizzate tutte le pagine di un processo, accessibile in modo diretto.
- * (b) Una struttura dati utilizzata dal sistema operativo per tenere traccia delle pagine allocate ai processi, contenendo i numeri dei frame in cui sono caricate le pagine.
- * (c) Una tabella che mappa gli indirizzi logici agli indirizzi fisici, gestita direttamente dall'hardware della CPU per una traduzione veloce degli indirizzi.
- * (d) Un registro hardware che memorizza gli indirizzi di partenza delle pagine di un processo, utilizzato durante la traduzione degli indirizzi.
+13. Cosa si intende per "anomalia di Belady" in relazione all'algoritmo FIFO?
+    *   (a) Si verifica quando l'algoritmo FIFO rimuove le pagine che sono state caricate da poco, anzichè quelle più vecchie.
+    *   (b) Si presenta quando l'algoritmo FIFO genera sempre lo stesso numero di page fault, indipendentemente dal numero di frame disponibili.
+    *  (c) Si manifesta quando un aumento del numero di frame disponibili porta paradossalmente ad un aumento dei page fault con l'algoritmo FIFO.
+    *   (d) Si ha quando l'algoritmo FIFO non riesce a liberare la memoria primaria, provocando un blocco del sistema.
 
-15. In un sistema di paginazione, come viene tradotto un indirizzo logico (pagina, offset) in un indirizzo fisico?
- * (a) L'indirizzo logico viene tradotto direttamente in indirizzo fisico tramite un'operazione di somma tra la pagina e l'offset.
- * (b) Il numero di pagina viene utilizzato come indice nella page table per recuperare l'indirizzo base del frame, a cui viene sommato l'offset.
- * (c) Il numero di pagina viene moltiplicato per la dimensione del frame, per ottenere l'indirizzo fisico corretto.
- * (d) L'offset viene utilizzato come indice nella tabella delle pagine, per determinare il numero del frame in cui è contenuta la pagina desiderata.
+14. Qual è la principale caratteristica distintiva dell'algoritmo di sostituzione delle pagine OPT (o MIN)?
+    *  (a) L'algoritmo cerca di sostituire la pagina usata meno recentemente, per imitare l'algoritmo LRU.
+    *  (b) L'algoritmo cerca di sostituire la pagina che non verrà più usata in futuro, garantendo un numero minimo di page fault.
+    *   (c) L'algoritmo cerca di rimuovere la pagina che è stata caricata per prima, simulando una coda FIFO.
+    *   (d) L'algoritmo cerca di tenere traccia delle pagine usate più spesso, e non le rimuove dalla RAM finché sono state usate.
 
-16. Qual è il principale vantaggio dell'utilizzo di pagine e frame di dimensioni pari a potenze di due nella paginazione della memoria?
- * (a) Permette di semplificare le operazioni di somma per calcolare gli indirizzi fisici e di risparmiare spazio nelle tabelle delle pagine.
- * (b) Permette una conversione efficiente tra indirizzi logici e fisici e di semplificare la gestione delle tabelle delle pagine, consentendo operazioni bit a bit al posto di somme.
- * (c) Rende più facile la gestione dei frame liberi in memoria fisica, riducendo la frammentazione esterna e velocizzando l'allocazione della memoria.
- * (d) Consente di utilizzare indirizzi logici e fisici di dimensione variabile, adattandosi alle esigenze dei diversi programmi.
+15. Qual è la principale differenza tra l'algoritmo di sostituzione delle pagine LRU (Least Recently Used) e l'algoritmo OPT?
+    *   (a) LRU guarda al futuro, mentre OPT guarda al passato per determinare quale pagina sostituire, scegliendo la pagina non usata più recentemente.
+    *   (b) LRU cerca di stimare quando una pagina sarà usata di nuovo, mentre OPT sceglie la pagina da sostituire basandosi sull'uso più recente, scegliendo quella non usata più a lungo.
+    *   (c) LRU sostituisce la pagina che è stata usata meno di recente, mentre OPT sostituisce la pagina che non sarà usata per più tempo nel futuro.
+    *  (d) LRU non soffre dell'anomalia di Belady, mentre OPT non è un algoritmo ideale, poichè fa un uso intensivo della memoria secondaria.
 
-17. Cosa rappresenta il Translation Look-aside Buffer (TLB) nel contesto della paginazione della memoria?
- * (a) Un registro della CPU in cui vengono memorizzati gli indirizzi fisici delle pagine più frequentemente usate da un processo, per velocizzare l'accesso alla memoria.
- * (b) Una memoria associativa gestita dal sistema operativo, dove vengono memorizzate le entry della tabella delle pagine, con un accesso più veloce rispetto alla RAM.
- * (c) Una cache della CPU che memorizza una parte della tabella delle pagine, riducendo il tempo necessario per la traduzione degli indirizzi da logici a fisici.
- * (d) Un buffer di memoria ad alta velocità in cui vengono caricate le istruzioni e i dati di un programma, per velocizzare l'esecuzione delle istruzioni.
+16.  Qual è la funzione del "reference bit" nell'algoritmo della seconda chance, un'approssimazione dell'algoritmo LRU?
+    *  (a) Indicare se una pagina è stata usata di recente (settato a 1) o meno (settato a 0), per consentire un'approssimazione della sostituzione LRU.
+    *  (b) Segnalare la priorità di una pagina nella memoria principale, indicando se deve essere rimossa per prima in caso di page fault.
+    *   (c) Controllare se una pagina è stata modificata dall'ultima volta che è stata caricata in memoria, aiutando a minimizzare la scrittura su disco.
+    *  (d) Mantenere una cronologia degli accessi di una pagina, indicando l'ordine in cui è stata usata per ottimizzare la sostituzione delle pagine.
 
-18. In un sistema di paginazione, quale tipo di frammentazione può ancora verificarsi?
- * (a) Frammentazione esterna, causata da buchi non contigui nella memoria fisica.
- * (b) Frammentazione interna, dovuta alla dimensione non perfetta dei processi rispetto alle partizioni di memoria allocata.
- * (c) Frammentazione logica, causata da indirizzi logici non contigui.
- * (d) Nessun tipo di frammentazione, perché la paginazione elimina completamente la frammentazione.
+17. In cosa consiste il fenomeno del thrashing in un sistema di memoria virtuale?
+    *   (a) Si verifica quando la CPU è sovraccarica a causa di un numero elevato di processi attivi, e il sistema non è in grado di gestire le richieste.
+    *   (b) Si verifica quando il sistema operativo non riesce ad allocare frame di memoria sufficienti a tutti i processi, e la CPU deve costantemente attendere il completamento delle operazioni di I/O.
+    *   (c) Si verifica quando i processi spendono più tempo a gestire i page fault che a fare il loro lavoro, con una diminuzione drastica delle prestazioni del sistema.
+    *   (d) Si verifica quando la memoria secondaria è piena e il sistema non riesce più a caricare nuove pagine o a salvare quelle esistenti, bloccando il sistema.
 
-19. In un sistema con paginazione a più livelli, qual è lo scopo di suddividere ulteriormente la tabella delle pagine?
- * (a) Aumentare la velocità di accesso alla tabella delle pagine, memorizzando le entry più frequentemente usate in una cache veloce.
- * (b) Ridurre lo spazio di memoria necessario per memorizzare le tabelle delle pagine, soprattutto in presenza di indirizzamento logico molto ampio.
- * (c) Migliorare la sicurezza del sistema, dividendo la tabella delle pagine in blocchi protetti con diversi livelli di accesso.
- * (d) Semplificare la gestione della memoria, dividendo la tabella delle pagine in blocchi allocati in modo dinamico.
+18. Quale tra le seguenti azioni è la più efficace per mitigare il problema del thrashing?
+    *   (a) Aumentare il numero di processi in esecuzione, per sfruttare al massimo le risorse del sistema ed accelerare la velocità di calcolo.
+    *   (b) Diminuire temporaneamente il grado di multiprogrammazione, in modo che i processi in memoria abbiano più frame a disposizione, e meno page fault.
+    *   (c) Aumentare la frequenza con cui il sistema operativo controlla la memoria primaria, in modo da individuare i page fault in anticipo, e gestirli in modo più efficiente.
+    *   (d) Allocare frame di memoria uniformemente a tutti i processi, per garantire un utilizzo equo delle risorse ed evitare blocchi.
 
-20. Qual è il principio di base della Tabella delle Pagine Invertita (IPT)?
- * (a) Ogni entry della tabella delle pagine invertita corrisponde ad un processo, e contiene l'indirizzo fisico di partenza della memoria del processo.
- * (b) C'è una tabella delle pagine invertita per ogni processo, contenente gli indirizzi fisici delle pagine del processo.
- * (c) C'è una sola tabella delle pagine invertita per tutto il sistema, che descrive l'occupazione dei frame nella memoria fisica.
- * (d) La tabella delle pagine invertita è utilizzata per mappare gli indirizzi fisici agli indirizzi logici, invertendo il normale processo di paginazione.
+19.  In un sistema con paginazione, quali sono i vantaggi di usare pagine di grandi dimensioni?
+    *  (a) Tabella delle pagine più piccole, meno frammentazione interna, più page fault, e un uso ottimale del disco.
+    *   (b) Tabella delle pagine più grandi, più frammentazione interna, meno page fault, e un uso efficiente del disco.
+    *  (c) Tabella delle pagine più piccole, meno frammentazione interna, meno page fault e migliori prestazioni nell'uso del disco.
+    *  (d) Tabella delle pagine più grandi, più frammentazione interna, più page fault e peggiori prestazioni nell'uso del disco.
+
+20. In che modo la struttura dei programmi influisce sul numero di page fault in un sistema di memoria virtuale?
+    *   (a) L'ordine in cui i dati sono memorizzati in memoria non ha nessun impatto sul numero di page fault, poichè il sistema di memoria virtuale li gestisce in modo efficiente.
+    *   (b) La disposizione dei dati e degli indirizzi nella memoria virtuale ha un impatto significativo, poichè la contiguità logica non garantisce la contiguità fisica.
+    *   (c) L'ordine in cui le istruzioni sono eseguite non ha impatto, poichè i page fault sono causati principalmente dall'accesso ai dati, e non al codice del programma.
+    *   (d) I page fault sono causati principalmente dall'uso intensivo del disco, e non dalla struttura dei programmi, o da come accedono ai dati.
 
 Risposte:
-1.(b) 2.(b) 3.(b) 4.(b) 5.(c) 6.(b) 7.(a) 8.(c) 9.(c) 10.(b) 11.(c) 12.(c) 13.(d) 14.(b) 15.(b) 16.(b) 17.(c) 18.(b) 19.(b) 20.(c)
+1.(b) 2.(b) 3.(c) 4.(c) 5.(c) 6.(c) 7.(c) 8.(c) 9.(c) 10.(b) 11.(a) 12.(b) 13.(c) 14.(b) 15.(c) 16.(a) 17.(c) 18.(b) 19.(c) 20.(b)
