@@ -8,18 +8,12 @@
       body {
         background-color: #f4f6f9;
       }
-      .quiz-card {
-        border-radius: 12px;
-        max-width: 600px;
-        margin: 0 auto;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      }
+
       .form-check {
         margin-bottom: 1rem;
       }
       .form-check-input:checked + .form-check-label {
         font-weight: bold;
-        color: #198754;
       }
       .progress {
         height: 6px;
@@ -45,10 +39,10 @@
   </head>
   <body>
     <div class="container mt-5">
-      <div class="quiz-card card shadow-sm">
+      <div class=" card shadow-sm">
         <div class="card-header bg-white border-0 pt-4 pb-0">
           <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar"
+            <div class="progress-bar bg-primary" role="progressbar"
                  style="width: {{ (current_index / total) * 100 }}%"
                  aria-valuenow="{{ current_index }}"
                  aria-valuemin="0"
@@ -99,7 +93,7 @@
               </div>
               {% endfor %}
               <div class="d-grid">
-                <button type="submit" class="btn btn-success btn-lg mt-3">
+                <button type="submit" class="btn btn-primary btn-lg mt-3">
                   Invia Risposta
                 </button>
               </div>

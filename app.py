@@ -37,10 +37,9 @@ class QuizParser:
 
             # Parse questions
             question_blocks = re.findall(r'(\d+)\.\s+([^*]+)(?:\s*\*\s*([^1-9]+))+', content)
-
             for block in question_blocks:
                 question_num = int(block[0])
-                question_text = block[1].strip()
+                question_text = block[1].strip().split('\n')[0]
 
                 # Find all options for this question
                 options_pattern = r'\*\s*\(([a-d])\)\s*([^\*]+?)(?=\*\s*\([a-d]\)|$)'
@@ -48,7 +47,7 @@ class QuizParser:
 
                 # Extract only the first 4 options
                 options = [(letter, text.split('\n')[0].strip()) for letter, text in options_matches[:4]]
-
+                if question_text == "": continue
                 # Create Question object
                 if question_num in self.answers:
                     self.questions.append(Question(
@@ -111,6 +110,7 @@ def quiz():
             answers = session.get("answers", {})
             answers[str(question.number)] = user_answer
             session["answers"] = answers
+
 
     return render_template("quiz.html",
                            question=question,
