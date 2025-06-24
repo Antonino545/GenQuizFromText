@@ -1,12 +1,16 @@
-Genera un quiz con 20 domande a scelta multipla, seguendo le seguenti indicazioni per il formato:
-Ogni domanda deve essere numerata, iniziando da '1.' e proseguendo fino a '20.'. Ogni domanda deve avere 4 opzioni di risposta, etichettate con (a), (b), (c), (d).
-Ogni domanda deve essere dettagliata e complessa, con un contesto chiaro, e deve richiedere una riflessione per rispondere correttamente.
-Le domande dovrebbero coprire vari ambiti, in modo da stimolare la riflessione e l'analisi.
-Ogni opzione di risposta deve essere formulata in modo simile per lunghezza e complessità, evitando risposte troppo ovvie o banali.
-Le opzioni di risposta devono essere equilibrate tra loro, in modo che nessuna sia facilmente identificabile come corretta.
-Ogni domanda deve essere seguita dalle sue opzioni, ciascuna preceduta da un asterisco (*).
-Alla fine del quiz, fornisci le risposte nel formato numero_della_domanda.(lettera_della_risposta).
-Non usare parole in grassetto, e le risposte devono essere chiare e concise.
-Evita domande che possano risultare banali o troppo facili, concentrandoti su argomenti che richiedano una buona comprensione dei concetti."
-FAI TANTI trobocchetti risposte simili che ti ingannano ma sbagliate
-DEVI Attenerti strettamente alla Fondi
+Genera un quiz con 20 domande a scelta multipla, numerate da 1. a 20. Ogni domanda deve essere dettagliata e complessa, con 4 opzioni etichettate (a), (b), (c), (d), tutte scritte sulla stessa riga, precedute da asterisco (*) e separate da spazi. Le opzioni devono avere lunghezza e complessità simili, con risposte ingannevoli ma equilibrate, senza indicare troppo chiaramente la corretta. Evita domande banali, concentrati su concetti che richiedono analisi e riflessione. Alla fine, inserisci la riga:
+
+Risposte: 1.(a) 2.(b) 3.(c) ...
+
+senza altri formati o markup.
+
+Esempio:
+
+Qual è la differenza tra processo e thread? * (a) Un processo condivide memoria, un thread ha spazio isolato. * (b) Un processo ha spazio proprio, un thread condivide spazio con thread dello stesso processo. * (c) Un thread è eseguito solo dopo il processo creatore. * (d) Processo e thread sono sinonimi.
+
+Cos’è la normalizzazione in un database? * (a) Riduce ridondanza dividendo tabelle, aumentando complessità query. * (b) Unisce più tabelle in una. * (c) Elimina tutte le dipendenze funzionali. * (d) Migliora prestazioni eliminando indici.
+
+...
+
+Risposte: 1.(b) 2.(a) ...
+

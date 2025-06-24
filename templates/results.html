@@ -2,29 +2,49 @@
 <html lang="it">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Risultati del Quiz</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-    <div class="container mt-5">
-      <div class="card shadow">
-        <div class="card-body">
-          <h2 class="card-title">Risultati del Quiz</h2>
-          <p class="card-text">Punteggio finale: {{ score }} / {{ total }}</p>
-          <p class="card-text">Percentuale corretta: {{ (score / total * 100) | round(1) }}%</p>
-          <hr>
-          <h4>Riepilogo Risposte:</h4>
-          <ul class="list-group">
-            {% for question in questions %}
-              {% set user_answer = answers.get(question.number|string, '-') %}
-              <li class="list-group-item">
-                <strong>Domanda {{ question.number }}:</strong> Tua risposta: ({{ user_answer }}),
-                Risposta corretta: ({{ question.correct_answer }})
-              </li>
-            {% endfor %}
-          </ul>
-          <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Ricomincia il Quiz</a>
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+          <div class="card shadow">
+            <div class="card-body p-4">
+              <h2 class="card-title text-center mb-4">Risultati del Quiz</h2>
+              <div class="row text-center mb-3">
+                <div class="col-md-6">
+                  <p class="card-text fs-5">Punteggio finale: {{ score }} / {{ total }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="card-text fs-5">Percentuale corretta: {{ (score / total * 100) | round(1) }}%</p>
+                </div>
+              </div>
+              <hr>
+              <h4 class="mb-3">Riepilogo Risposte:</h4>
+              <div class="list-group mb-4">
+                {% for question in questions %}
+                  {% set user_answer = answers.get(question.number|string, '-') %}
+                  <div class="list-group-item">
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                      <div class="mb-2 mb-md-0">
+                        <strong>Domanda {{ question.number }}:</strong>
+                      </div>
+                      <div>
+                        <span class="d-block d-md-inline me-md-3">Tua risposta: <span class="badge bg-secondary">{{ user_answer }}</span></span>
+                        <span class="d-block d-md-inline">Risposta corretta: <span class="badge bg-success">{{ question.correct_answer }}</span></span>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="text-center">
+                <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4">Ricomincia il Quiz</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
