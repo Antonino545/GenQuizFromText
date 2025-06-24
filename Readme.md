@@ -36,25 +36,3 @@ Questo programma converte un quiz in formato testo (`quiz.txt`) in un quiz inter
     ```
 
 3. Apri il browser e vai all'indirizzo `http://127.0.0.1:5000` per iniziare il quiz.
-
-## Formato del file `quiz.txt`
-
-Il file `quiz.txt` deve seguire il seguente formato:
-
-```
-Domanda 1  
-(a) Opzione A
-(b) Opzione B
-(c) Opzione C
-(d) Opzione D
-Domanda 2  
-(a) Opzione A
-(b) Opzione B
-(c) Opzione C
-(d) Opzione D
-
-```
-## Esempi di prompt per notebooklm
-Sono i due file in ExamplesPromt
-
-
