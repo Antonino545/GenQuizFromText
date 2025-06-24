@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <title>Quiz - Domanda {{ current_index }} di {{ total }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Quiz - Domanda {{ current_index }} di {{ total }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Custom CSS -->
+    <!-- Custom CSS -->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -35,80 +36,83 @@
 </nav>
 
 
-  <div class="container py-5">
+<div class="container py-5">
     <div class="card shadow-lg">
-      <div class="card-header">
-        <div class="progress mb-3">
-          <div class="progress-bar" role="progressbar"
-               style="width: {{ (current_index / total) * 100 }}%"
-               aria-valuenow="{{ current_index }}"
-               aria-valuemin="0"
-               aria-valuemax="{{ total }}">
-          </div>
+        <div class="card-header">
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar"
+                     style="width: {{ (current_index / total * 100) | round(0, 'floor') }}%;"
+                     aria-valuenow="{{ current_index }}"
+                     aria-valuemin="0"
+                     aria-valuemax="{{ total }}">
+                    {{ (current_index / total * 100) | round(0, 'floor') }}%
+                </div>
+            </div>
+            <h5 class="text-center text-muted mb-0">Domanda {{ current_index }} di {{ total }}</h5>
         </div>
-        <h5 class="text-center text-muted mb-0">Domanda {{ current_index }} di {{ total }}</h5>
-      </div>
 
-      <div class="card-body">
-        <h4 class="card-title text-center mb-4">{{ question.text }}</h4>
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4">{{ question.text }}</h4>
 
 
-
-        {% if user_answer is not none %}
-          {% if user_answer == question.correct_answer %}
+            {% if user_answer is not none %}
+            {% if user_answer == question.correct_answer %}
             <div class="feedback correct">✅ Risposta corretta!</div>
-          {% else %}
+            {% else %}
             <div class="feedback incorrect">
-              ❌ Risposta errata<br>
-              <small>La risposta corretta era:</small><br>
-              <strong>{{ question.correct_answer }})
-                {% for letter, option in question.options %}
-                  {% if letter == question.correct_answer %}
+                ❌ Risposta errata<br>
+                <small>La risposta corretta era:</small><br>
+                <strong>{{ question.correct_answer }})
+                    {% for letter, option in question.options %}
+                    {% if letter == question.correct_answer %}
                     {{ option }}
-                  {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </strong>
+            </div>
+            {% endif %}
+
+            <form method="post" class="mt-4">
+                <input type="hidden" name="continue" value="true">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        {% if current_index < total %}
+                        ➡️ Prossima domanda
+                        {% else %}
+                        🏁 Visualizza risultati
+                        {% endif %}
+                    </button>
+                </div>
+            </form>
+
+            {% else %}
+            <form method="post">
+                {% for letter, option in question.options %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer"
+                           id="option{{ letter }}" value="{{ letter }}" required>
+                    <label class="form-check-label" for="option{{ letter }}">
+                        <span class="badge bg-secondary me-2">{{ letter|upper }}</span>
+                        {{ option }}
+                    </label>
+                </div>
                 {% endfor %}
-              </strong>
-            </div>
-          {% endif %}
-
-          <form method="post" class="mt-4">
-            <input type="hidden" name="continue" value="true">
-            <div class="d-grid">
-              <button type="submit" class="btn btn-success btn-lg">
-                {% if current_index < total %}
-                  ➡️ Prossima domanda
-                {% else %}
-                  🏁 Visualizza risultati
-                {% endif %}
-              </button>
-            </div>
-          </form>
-
-        {% else %}
-          <form method="post">
-            {% for letter, option in question.options %}
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="answer"
-                       id="option{{ letter }}" value="{{ letter }}" required>
-                <label class="form-check-label" for="option{{ letter }}">
-                  <span class="badge bg-secondary me-2">{{ letter|upper }}</span>
-                  {{ option }}
-                </label>
-              </div>
-            {% endfor %}
-            <div class="d-grid mt-4">
-              <button type="submit" class="btn btn-primary btn-lg">✅ Invia risposta</button>
-            </div>
-          </form>
-        {% endif %}
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">✅ Invia risposta</button>
+                </div>
+            </form>
+            {% endif %}
             <!-- Bottone Fine quiz in alto -->
-        <div class="d-flex justify-content-center mb-3">
-          <a href="{{ url_for('results') }}" class="btn btn-danger w-50 m-4">🛑 Fine quiz</a>
+            <div class="d-flex justify-content-center mb-3">
+                <a href="{{ url_for('results') }}" class="btn btn-danger w-50 m-4">🛑 Fine quiz</a>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- Bootstrap JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script></body>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
 </html>
