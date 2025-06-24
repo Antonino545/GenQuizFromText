@@ -16,6 +16,29 @@
 </head>
 <body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">GenQuizFromText</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#linee-guida">Linee Guida</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Container -->
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
     <div class="quiz-container text-center p-4 p-md-5 rounded shadow-sm">
         <h1 class="mb-3">Benvenuto in GenQuizFromText!</h1>
@@ -33,6 +56,53 @@
             <button type="submit" class="btn btn-primary btn-lg w-100 mt-2">Carica e Inizia</button>
         </form>
     </div>
+</div>
+
+<!-- Linee Guida Section -->
+<div class="container my-5" id="linee-guida">
+    <h2 class="mb-4">📘 Linee Guida per la Creazione delle Domande</h2>
+
+    <h4>🔹 Vero / Falso</h4>
+    <ul>
+        <li>20 domande numerate da 1 a 20.</li>
+        <li>Ogni domanda ha due opzioni: <strong>(a) Vero</strong> e <strong>(b) Falso</strong>.</li>
+        <li>Domande complesse, non banali, con contesto chiaro e ragionamento richiesto.</li>
+        <li>Bilanciare le risposte per evitare che una sembri più ovvia dell'altra.</li>
+    </ul>
+
+    <pre>
+L'acqua è l'unico liquido presente naturalmente in tutti e tre gli stati della materia (solido, liquido e gassoso) sulla Terra.
+(a) Vero
+(b) Falso
+Risposte: 1.(a)
+    </pre>
+
+    <p><strong>Formato risposte:</strong></p>
+    <pre>Risposte: 1.(a) 2.(b) 3.(a) ...</pre>
+
+    <hr>
+
+    <h4>🔹 Scelta Multipla (Possibile più di una risposta)</h4>
+    <ul>
+        <li>20 domande numerate da 1 a 20.</li>
+        <li>Ogni domanda ha opzioni etichettate es: (a), (b), (c), (d), tutte sulla stessa riga.</li>
+        <li>Le opzioni devono avere lunghezza e complessità simili.</li>
+        <li>Evita distrattori banali: tutte le risposte devono sembrare plausibili.</li>
+    </ul>
+
+    <pre>
+1. Qual è la differenza tra processo e thread?
+* (a) Un processo condivide memoria, un thread ha spazio isolato.
+* (b) Un processo ha spazio proprio, un thread condivide spazio con thread dello stesso processo.
+* (c) Un thread è eseguito solo dopo il processo creatore.
+* (d) Processo e thread sono sinonimi.
+    </pre>
+
+    <p><strong>Formato risposte:</strong></p>
+    <pre>Risposte: 1.(b) 2.(a) 3.(c) ...</pre>
+
+
+
 </div>
 
 <!-- Bootstrap JS Bundle -->

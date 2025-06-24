@@ -33,10 +33,7 @@
       <div class="card-body">
         <h4 class="card-title text-center mb-4">{{ question.text }}</h4>
 
-        <!-- Bottone Fine quiz in alto -->
-        <div class="d-flex justify-content-center mb-3">
-          <a href="{{ url_for('results') }}" class="btn btn-danger btn-sm">🛑 Fine quiz</a>
-        </div>
+
 
         {% if user_answer is not none %}
           {% if user_answer == question.correct_answer %}
@@ -85,6 +82,10 @@
             </div>
           </form>
         {% endif %}
+            <!-- Bottone Fine quiz in alto -->
+        <div class="d-flex justify-content-center mb-3">
+          <a href="{{ url_for('results') }}" class="btn btn-danger btn-sm mt-4">🛑 Fine quiz</a>
+        </div>
       </div>
     </div>
   </div>
