@@ -134,15 +134,6 @@ def results():
                            questions=questions)
 
 
-@app.route("/quiz_info")
-def quiz_info():
-    global parser, questions
-    quiz_type_display = "Vero/Falso" if parser and parser.quiz_type == QuizType.TRUE_FALSE else "Scelta Multipla"
-    return render_template("quiz_info.html",
-                           quiz_type=quiz_type_display,
-                           total_questions=len(questions),
-                           questions=questions)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
